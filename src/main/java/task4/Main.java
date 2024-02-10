@@ -1,6 +1,7 @@
 package task4;
 
 import task4.balance.BalanceAfterTaxes;
+import task4.exceptions.NotValidBalanceException;
 import task4.user.User;
 import task4.user.UserTaxesSum;
 
