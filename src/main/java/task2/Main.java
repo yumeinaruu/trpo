@@ -22,7 +22,7 @@ public class Main {
         printByDayTime(airlines);
     }
 
-    public static void printByDestiny(Airline[] airlines){
+    public static void printByDestiny(Airline[] airlines) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter destiny: ");
         String destiny = scanner.nextLine();
@@ -33,7 +33,7 @@ public class Main {
         }
     }
 
-    public static void printByDayOfWeek(Airline[] airlines){
+    public static void printByDayOfWeek(Airline[] airlines) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter day of week: ");
         String dayOfWeek = scanner.nextLine();
@@ -44,7 +44,7 @@ public class Main {
         }
     }
 
-    public static void printByDayTime(Airline[] airlines){
+    public static void printByDayTime(Airline[] airlines) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter day of week and time: ");
         String dayOfWeek = scanner.nextLine();

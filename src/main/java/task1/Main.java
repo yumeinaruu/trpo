@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Enter numbers from 1 to 100: ");
         String[] numbers = scanner.nextLine().split(" ");
         int[] numArray = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++){
+        for (int i = 0; i < numbers.length; i++) {
             numArray[i] = Integer.parseInt(numbers[i]);
         }
 
