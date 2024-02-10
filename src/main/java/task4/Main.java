@@ -22,13 +22,14 @@ public class Main {
                 .childrenTax()
                 .build();
         BalanceAfterTaxes balance = new BalanceAfterTaxes();
+        UserTaxesSum userTaxesSum = new UserTaxesSum();
         System.out.println("Input person's balance: ");
-        balance.setBalance(scanner.nextDouble());
+        balance.setBalance(scanner.nextDouble(), userTaxesSum.taxSum(user));
         HashMap<String, Double> userBalance = new HashMap<>();
         userBalance.put(user.getName(), balance.getBalance());
         System.out.println("Information about user before taxes: " + userBalance);
 
-        balance.newBalance(new UserTaxesSum().taxSum(user));
+        balance.newBalance(userTaxesSum.taxSum(user));
 
         userBalance.put(user.getName(), balance.getBalance());
         System.out.println("Information about user after taxes: " + userBalance);

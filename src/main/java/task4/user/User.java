@@ -8,6 +8,7 @@ public class User extends UserInfo {
     public static class UserBuilder {
         Scanner scanner = new Scanner(System.in);
         private User user;
+        private double temp;
 
         public UserBuilder() {
             user = new User();
@@ -24,10 +25,11 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.mainJobTax = scanner.nextDouble();
-                    if(user.mainJobTax < 0){
+                    temp = scanner.nextDouble();
+                    if(temp < 0){
                         throw new NotValidBalanceException();
                     }
+                    user.mainJobTax = temp;
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
@@ -40,10 +42,11 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.extraJobTax = scanner.nextDouble();
-                    if(user.extraJobTax < 0){
+                    temp = scanner.nextDouble();
+                    if(temp < 0){
                         throw new NotValidBalanceException();
                     }
+                    user.extraJobTax = temp;
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
@@ -56,10 +59,11 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.rewardTax = scanner.nextDouble();
+                    temp = scanner.nextDouble();
                     if(user.rewardTax < 0){
                         throw new NotValidBalanceException();
                     }
+                    user.rewardTax = temp;
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
@@ -72,13 +76,14 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.propertySaleTax = scanner.nextDouble();
-                    if(user.propertySaleTax < 0){
+                    temp = scanner.nextDouble();
+                    if(temp < 0){
                         throw new NotValidBalanceException();
                     }
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
+                user.propertySaleTax = temp;
             }
             return this;
         }
@@ -88,10 +93,11 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.giftTax = scanner.nextDouble();
-                    if(user.giftTax < 0){
+                    temp = scanner.nextDouble();
+                    if(temp < 0){
                         throw new NotValidBalanceException();
                     }
+                    user.giftTax = temp;
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
@@ -104,10 +110,11 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.foreignTransactionTax = scanner.nextDouble();
-                    if(user.foreignTransactionTax < 0){
+                    temp = scanner.nextDouble();
+                    if(temp < 0){
                         throw new NotValidBalanceException();
                     }
+                    user.foreignTransactionTax = temp;
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
@@ -120,10 +127,11 @@ public class User extends UserInfo {
             if (Objects.equals(scanner.next(), "y")) {
                 System.out.println("Input amount of money: ");
                 try {
-                    user.childrenTax = scanner.nextDouble();
-                    if(user.childrenTax < 0){
+                    temp = scanner.nextDouble();
+                    if(temp < 0){
                         throw new NotValidBalanceException();
                     }
+                    user.childrenTax = temp;
                 } catch (NotValidBalanceException e){
                     System.out.println(e);
                 }
