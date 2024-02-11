@@ -1,9 +1,13 @@
 package task4.user;
+import lombok.Getter;
+import lombok.Setter;
 import task4.exceptions.NotValidBalanceException;
 
 import java.util.Objects;
 import java.util.Scanner;
 
+@Getter
+@Setter
 public class User extends UserInfo {
     public static class UserBuilder {
         Scanner scanner = new Scanner(System.in);
