@@ -13,6 +13,7 @@ public class JDBCStatement {
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO trpo(id, username, balance) VALUES (DEFAULT, '" + name + "', '" + balance + "')");
+            statement.executeUpdate("DELETE FROM trpo WHERE balance= 0");
             statement.close();
         } catch (SQLException e) {
             System.out.println(e);
