@@ -4,6 +4,7 @@ import task4.balance.BalanceAfterTaxes;
 import task4.exceptions.NotValidBalanceException;
 import task4.user.User;
 import task4.user.UserTaxesSum;
+import task7.CreateDB;
 import task7.JDBCConnection;
 import task7.JDBCStatement;
 import task7.JDBCUpdate;
@@ -38,6 +39,7 @@ public class Main {
         //System.out.println("Information about user after taxes: " + userBalance);
 
         JDBCStatement statement = new JDBCStatement();
+        CreateDB.createDB(new JDBCConnection().findAll());
         statement.setStatement(new JDBCConnection().findAll(), user.getName(), balance.getBalance());
         statement.getStatement(new JDBCConnection().findAll());
         JDBCUpdate.updateStatement(new JDBCConnection().findAll());
