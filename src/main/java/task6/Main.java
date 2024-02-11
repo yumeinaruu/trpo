@@ -1,11 +1,11 @@
 package task6;
 
+import java.util.concurrent.Semaphore;
+
 public class Main {
     public static void main(String[] args) {
-        Store store = new Store();
-        Producer producer = new Producer(store);
-        Consumer consumer = new Consumer(store);
-        new Thread(producer).start();
-        new Thread(consumer).start();
+        Semaphore semaphore = new Semaphore(2);
+        for (int i = 1; i < 6; i++)
+            new Consumer(semaphore, i).start();
     }
 }

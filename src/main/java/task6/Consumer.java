@@ -1,20 +1,30 @@
 package task6;
 
-public class Consumer implements Runnable {
-    private Store store;
+import java.util.concurrent.Semaphore;
 
-    public Consumer(Store store) {
-        this.store = store;
+public class Consumer extends Thread {
+    Semaphore semaphore;
+    int num = 0;
+    int id;
+
+    Consumer(Semaphore semaphore, int id) {
+        this.semaphore = semaphore;
+        this.id = id;
     }
 
-    @Override
     public void run() {
-        for (int i = 1; i < 6; i++) {
-            try {
-                store.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        try {
+            while (num < 3) {
+                semaphore.acquire();
+                System.out.println("Consumer " + id + " is using checkout");
+                sleep(3000);
+                num++;
+                System.out.println("Consumer " + id + " has left checkout");
+                semaphore.release();
+                sleep(500);
             }
+        } catch (InterruptedException e) {
+            System.out.println("Thread was interrupted");
         }
     }
 }
