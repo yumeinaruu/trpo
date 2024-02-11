@@ -22,5 +22,12 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--Тут драйвер для jdbc-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.1</version>
+        </dependency>
     </dependencies>
 </project>
