@@ -6,6 +6,7 @@ import task4.user.User;
 import task4.user.UserTaxesSum;
 import task7.JDBCConnection;
 import task7.JDBCStatement;
+import task7.JDBCUpdate;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -39,7 +40,7 @@ public class Main {
         JDBCStatement statement = new JDBCStatement();
         statement.setStatement(new JDBCConnection().findAll(), user.getName(), balance.getBalance());
         statement.getStatement(new JDBCConnection().findAll());
-        statement.updateStatement(new JDBCConnection().findAll());
+        JDBCUpdate.updateStatement(new JDBCConnection().findAll());
         statement.getStatement(new JDBCConnection().findAll());
     }
 }

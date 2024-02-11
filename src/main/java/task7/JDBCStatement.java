@@ -34,20 +34,5 @@ public class JDBCStatement {
         }
     }
 
-    public void updateStatement(Connection connection) {
-        try {
-            System.out.println("If you need to update someones balance type 'y' ");
-            if (!Objects.equals(scanner.nextLine(), "y")) {
-                return;
-            }
-            System.out.println("Write name: ");
-            String newUsername = scanner.nextLine();
-            System.out.println("Write new balance: ");
-            double newBalance = scanner.nextDouble();
-            Statement statement = connection.createStatement();
-            statement.executeUpdate("UPDATE trpo SET balance='" + newBalance + "' WHERE username='" + newUsername +"'" );
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
+
 }
