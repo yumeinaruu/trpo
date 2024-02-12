@@ -14,7 +14,6 @@ public class Consumer extends Thread {
 
     public void run() {
         try {
-            while (num < 3) {
                 semaphore.acquire();
                 System.out.println("Consumer " + id + " is using checkout");
                 sleep(3000);
@@ -22,7 +21,6 @@ public class Consumer extends Thread {
                 System.out.println("Consumer " + id + " has left checkout");
                 semaphore.release();
                 sleep(500);
-            }
         } catch (InterruptedException e) {
             System.out.println("Thread was interrupted");
         }
