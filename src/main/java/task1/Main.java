@@ -13,7 +13,9 @@ public class Main {
             numArray[i] = Integer.parseInt(numbers[i]);
         }
 
-        Arrays.stream(numArray).filter((value -> value % 3 == 0 && value < 100 && value > 0)).forEach(System.out::println);
+        Arrays.stream(numArray)
+                .filter((value -> value % 3 == 0 && value < 100 && value > 0))
+                .forEach(System.out::println);
 
         System.out.println("Сделал студент группы 222403 Лисовой Станислав.");
         System.out.println("Задание принято: 10.02.2024");
