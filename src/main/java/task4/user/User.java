@@ -1,6 +1,7 @@
 package task4.user;
 import lombok.Getter;
 import lombok.Setter;
+import task4.balance.BalanceAfterTaxes;
 import task4.exceptions.NotValidBalanceException;
 
 import java.util.Objects;
@@ -164,5 +165,22 @@ public class User extends UserInfo {
                 ", foreignTransactionTax=" + foreignTransactionTax +
                 ", childrenTax=" + childrenTax +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            return true;
+        }
+        if(obj == null || getClass() != obj.getClass()){
+            return false;
+        }
+        User user = (User) obj;
+        return Objects.equals(name, user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (18+(name.hashCode() + new BalanceAfterTaxes().getBalance()));
     }
 }
